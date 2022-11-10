@@ -10,7 +10,8 @@ public class Ejercicio9 {
 		int numeroIntroducido;//Declaro variable en la que guardare el numero introducido por el usuario
 
 		
-		boolean esPrimo = true;//Declaro variable con la que determino si el número es primo o no
+		boolean esPrimo = true;//Declaro variable con la que determino si el número es primo o no 
+		//y la inicializo con valor true por defecto suponiendo que si es primo y dejo al bucle que cambie a false de no ser primo
 
 		//Creo un Scanner, lo llamo dogma y lo importo
 		Scanner dogma = new Scanner(System.in);
@@ -24,12 +25,14 @@ public class Ejercicio9 {
 		// Establezco condicion numeroIntroducido mayor que 0 (el número introducido es positivo)
 		if (numeroIntroducido > 0) {
 			
-			// Recorremos los números desde 2 hasta número-1
+			// Recorremos los números desde 2 hasta numeroIntroducido -1 (ya que el mismo si seria divisible)
 			for (int i = 2; i < numeroIntroducido; i++) {
-				// Si el número es divisible por i deja de ser primo
+				
+				// Si el número es divisible por i (dando resto 0) deja de ser primo
 				if (numeroIntroducido % i == 0) {
 					esPrimo = false;
-					//En cuyo caso salgo del bucle on un break
+					
+					//En cuyo caso salgo del bucle con un break
 					break;
 				}
 			}
